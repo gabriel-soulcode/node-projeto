@@ -1,0 +1,9 @@
+// Node Package Manager (Gerenciador de Pacotes do Node)
+// Criar um novo pacote (módulo) | npm init -y
+// Instalar/Desinstalar modulos  | npm install <pacote> | npm uninstall <pacote>
+// Executar scripts              | npm run <script>
+
+// Executar o projeto em modo de desenvolvimento
+// Gerar o bundle do projeto
+// Fazer a implantação do projeto
+// Executar o projeto em modo de produção
