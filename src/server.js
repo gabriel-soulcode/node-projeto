@@ -1,7 +1,7 @@
 // express é um módulo que permite criar um servidor HTTP
 import express from "express";
 import sequelize from "./database/db.js";
-import Produto from "./database/Produto.js";
+import produtoRoutes from "./routes/produtoRoutes.js";
 
 // Conexão com banco de dados
 sequelize.authenticate().then(() => {
@@ -18,12 +18,8 @@ server.get("/", (req, res) => {
   res.status(200).json({ message: "Bem-vindo." });
 });
 
-server.get("/produtos/create", async (req, res) => {
-  const { nome, preco, categoria } = req.query;
-  const dados = { nome, preco, categoria };
-  const produto = await Produto.create(dados);
-  res.status(200).json(produto);
-});
+// Incorporação as routas do produtoRoutes no servidor
+server.use(produtoRoutes);
 
 // Inicialização do servidor na porta 3000 do computador 
 server.listen(3000, () => {
