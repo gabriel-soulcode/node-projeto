@@ -2,6 +2,7 @@
 import express from "express";
 import sequelize from "./database/db.js";
 import produtoRoutes from "./routes/produtoRoutes.js";
+import clienteRoutes from "./routes/clienteRoutes.js";
 
 // Conexão com banco de dados
 sequelize.authenticate().then(() => {
@@ -13,6 +14,9 @@ sequelize.authenticate().then(() => {
 // Criação de um novo servidor configurado
 const server = express();
 
+// Permite que o servidor reconheça arquivos JSON no corpo das requisições
+server.use(express.json());
+
 // Configuração da primeira rota tipo GET
 server.get("/", (req, res) => {
   res.status(200).json({ message: "Bem-vindo." });
@@ -20,6 +24,7 @@ server.get("/", (req, res) => {
 
 // Incorporação as routas do produtoRoutes no servidor
 server.use(produtoRoutes);
+server.use(clienteRoutes);
 
 // Inicialização do servidor na porta 3000 do computador 
 server.listen(3000, () => {

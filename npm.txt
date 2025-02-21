@@ -7,3 +7,11 @@
 // Gerar o bundle do projeto
 // Fazer a implantação do projeto
 // Executar o projeto em modo de produção
+
+
+// REST (Representational State Tranfer)
+// API RESTFul (Application Programming Interface)
+// GET    -> Consultar
+// POST   -> Salvar
+// PUT    -> Editar
+// DELETE -> Excluir
