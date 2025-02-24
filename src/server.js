@@ -1,3 +1,6 @@
+// Configuração das variaveis de ambiente do arquivo .env
+import "dotenv/config";
+
 // express é um módulo que permite criar um servidor HTTP
 import express from "express";
 import sequelize from "./database/db.js";

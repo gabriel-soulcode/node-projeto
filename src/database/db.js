@@ -1,8 +1,8 @@
 import { Sequelize } from "sequelize";
 
-const database = "db_api_node";
-const user = "root";
-const password = "123456";
+const database = process.env.DB_NAME;
+const user = process.env.DB_USER;
+const password = process.env.DB_PASSWORD;
 
 const sequelize = new Sequelize(database, user, password, {
   dialect: "mysql",
