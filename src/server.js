@@ -2,6 +2,7 @@
 import "dotenv/config";
 
 // express é um módulo que permite criar um servidor HTTP
+import cors from "cors";
 import express from "express";
 import sequelize from "./database/db.js";
 import produtoRoutes from "./routes/produtoRoutes.js";
@@ -16,6 +17,9 @@ sequelize.authenticate().then(() => {
 
 // Criação de um novo servidor configurado
 const server = express();
+
+// Mudança de permissão para permitir acesso de todas as origens
+server.use(cors({ origin: "*" }));
 
 // Permite que o servidor reconheça arquivos JSON no corpo das requisições
 server.use(express.json());
